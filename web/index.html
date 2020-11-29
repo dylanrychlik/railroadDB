@@ -1,0 +1,81 @@
+
+<html>
+    <head>
+        <title>Standard Database Web app </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <style>
+        
+             a {
+            color: #800000;;
+            text-align: center;
+            font: italic 150% fantasy;
+            margin: 0 5px;
+            padding: 5px;
+
+                 }
+            .Client {
+                display: inline-block;
+                margin: 0 5px;
+                padding: 5px;
+               
+              }
+            body {
+                background-color: #FFDAB9;
+            }
+
+            #container label {
+                margin-top: 15px;
+                text-align: center;
+                font-size: 25px;
+                display: block;
+                color: #0080a8;
+                font-size: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <a href="indexStation.jsp" class="Station"> Station table </a> 
+        <a href="indexTracks.jsp" class="Tracks">  Tracks table </a>
+        <a href="indexPassenger.jsp" class="Passenger"> Passenger table </a>
+        <a href="indexTrain.jsp" class="Train"> Train table </a>
+        <a href="indexTrack_destination.jsp" class="Client">  Track destination table </a>
+        <a href="indexTrain_schedule.jsp" class="Transaction"> Train schedule table </a>
+        <div id="container"></div>
+        <script type="text/babel">
+
+            //Declares a JS variable that allows use of the 'querySelector' component and the container element.
+            var destination = document.querySelector("#container");
+
+            //Create a class called 'Labelcomponent' that extends the react component
+            class Labelcomponent extends React.Component {
+                //creates a render property. Sort of like a function
+                render() {
+                    //Have it return the label with a text property and a behavior property. 
+                    return(
+                            <div>
+               <label type={this.props.behavior}>{this.props.children}</label>
+                </div>
+                            )
+                }
+            }
+            //Create a ReactDOM render to call the component several times with different text. 
+            ReactDOM.render(
+                    <div>
+                <Labelcomponent behavior="Submit">Welcome to the standard database create and delete program.</Labelcomponent>
+        <Labelcomponent behavior="Submit">This is a simple React.js home page.</Labelcomponent>
+        <Labelcomponent behavior="Submit">There are links to the two MySQL tables that allow you to insert and update table data.</Labelcomponent>
+        <Labelcomponent behavior="Submit">These pages were written in JSP with a typical OOP class stucture for the two tables as the backend. </Labelcomponent>
+        <Labelcomponent behavior="Submit">Enjoy!!!</Labelcomponent>
+            
+            </div>,
+                    document.querySelector("#container")
+                    );
+        </script>
+    </body>
+</html>
