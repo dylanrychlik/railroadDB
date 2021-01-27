@@ -23,7 +23,7 @@ public abstract class Enity {
         Connection con;
         Class.forName("com.mysql.jdbc.Driver");
         String connectionUrl = "jdbc:mysql://cloud19.hostgator.com/uzaqleuw_Railroad_system_test";
-        con = DriverManager.getConnection(connectionUrl, "uzaqleuw_root", "3Hotdogs!");
+        con = DriverManager.getConnection(connectionUrl, "*******", "*************");
         //Returns the connection object
         return con;
     }
